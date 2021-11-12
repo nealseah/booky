@@ -14,10 +14,10 @@ echo "Dumping pdf meta data..."
 pdftk "$pdf" dump_data_utf8 output "$pdf_data"
 
 echo "Clear dumped data of any previous bookmarks"
-sed -i '/Bookmark/d' "$pdf_data"
+gsed -i '/Bookmark/d' "$pdf_data"
 
 echo "Inserting your bookmarks in the data"
-sed -i "/NumberOfPages/r $EXTRACT_FILE" "$pdf_data"
+gsed -i "/NumberOfPages/r $EXTRACT_FILE" "$pdf_data"
 
 echo "Creating new pdf with your bookmarks..."
 pdftk "$pdf" update_info_utf8 "$pdf_data" output "${pdf%.*}""_new.pdf"
