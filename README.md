@@ -52,13 +52,13 @@ this script to enter bookmarks data in a simple format.
 * Write the following commands in the terminal
 
   ```
-  ./booky.sh your_pdf_file.pdf your_text_file.txt
+  ./booky.sh your_pdf_file.pdf your_text_file.txt page_offset
   ```
 This creats a new pdf file `your_pdf_file_new.pdf` with your bookmarks.
 
-This is going to work in *nix systems if instead you are on a Windows machine. Then first install `python3` and `pdftk` just use the `booky.py` file in the repo to convert `bkmrks.txt` to `pdftk` compatible format
+This is going to work in *nix systems if instead you are on a Windows machine. Then first install `python3` and `pdftk` just use the `booky.py` file in the repo to convert `bkmrks.txt` with `20` page offset to `pdftk` compatible format
 
-    python3 booky.py < bkmrks.txt > output.txt
+    python3 booky.py < bkmrks.txt 20 > output.txt
 
 use the export command to generate a dumped data file.
 
